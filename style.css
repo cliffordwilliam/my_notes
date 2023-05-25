@@ -1,0 +1,55 @@
+body {
+    background-color: #121212;
+    color: white;
+    margin: 50px;
+}
+
+.grid {
+    display: grid;
+    grid-template: 1fr / repeat(5, 1fr);
+    grid-auto-rows: 1fr;
+    min-width: 0px;
+    gap: 20px;
+    padding: 10px;
+}
+
+.nostyle {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.card-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.grid > * {
+    min-width: 0px;
+}
+
+.card {
+    position: relative;
+    border: none;
+    background-color: #242424;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-radius: 0.5rem;
+    word-wrap: break-word;
+}
+
+.card > * {
+    margin: 0;
+}
+
+.card > img {
+    border-radius: 0.5rem;
+}
+
+.hovered {
+    background-color: #383838;
+}
