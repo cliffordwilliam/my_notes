@@ -1,2 +1,2 @@
-# web_development_notes
-Notes on all web development related.
+# m_notes
+My notebook.
