@@ -1,2 +1,2 @@
-# m_notes
+# my_notes
 My notebook.

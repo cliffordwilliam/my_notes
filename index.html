@@ -4,8 +4,311 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Notes</title>
+    <style>
+        /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=checkbox],[type=radio],legend{box-sizing:border-box;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}details,main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{padding:.35em .75em .625em}legend{color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}
+        
+        * {
+            /* outline: 1px solid red; */
+            border: 1px solid transparent;
+            box-sizing: border-box;
+        }
+
+        html {
+            background-color: #eee;
+        }
+
+        .text-icon-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .text-icon-container > svg {
+            margin-right: 1rem;
+        }
+
+        .content-anchor {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            border-top: 1px solid #ddd;
+            color: #000;
+            text-decoration: none;
+            transition: ease-in-out, background-color .15s;
+        }
+
+        .content-anchor:hover {
+            background-color: #eee;
+        }
+
+        body {
+            width: 100vw;
+            max-width: 1320px;
+            margin: auto;
+            background-color: #fff;
+            font-family: sans-serif;
+            padding: 0 1rem;
+        }
+
+        .paper {
+            border-top: 1px solid #ddd; border-right: 1px solid #ccc; border-bottom: 2px solid #bbb; border-left: 1px solid #ccc;
+        }
+
+        .paper > *:not(ul) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .header-title {
+            background-color: #eee;
+        }
+
+        article {
+            margin: 1.7rem 0;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        hr {
+            border: none;
+            border-bottom: 1px solid #ddd;
+            padding: 0;
+            margin: 0;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            line-height: 2rem;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        pre {
+            background-color: #eee;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        .pre-container {
+            margin: 1.125rem 0;
+        }
+
+        ul {
+            padding-left: 2.5rem;
+        }
+
+        li {
+            margin: .6rem 0;
+            padding-left: .4rem;
+        }
+    </style>
 </head>
-<body>
-    <header></header>
+<body class="paper">
+    <header>
+        <h1>My Notes</h1>
+        <nav class="paper">
+            <div class="header-title">
+                <h2>Contents</h2>
+            </div>
+            <a href="#this-site-specs" class="content-anchor text-icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                </svg>
+                <span>This Site Specs</span>
+            </a>
+            <a href="#production-solutions" class="content-anchor text-icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                </svg>
+                <span>Production Solutions</span>
+            </a>
+            <a href="#tricky-html" class="content-anchor text-icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                </svg>
+                <span>Tricky HTML</span>
+            </a>
+            <a href="#the-unix-shell" class="content-anchor text-icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                </svg>
+                <span>The Unix Shell</span>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <section id="this-site-specs" class="paper">
+                <div class="header-title">
+                    <h3>This Site Specs</h3>
+                </div>
+
+                <h4>Overall Structure</h4>
+                <p>
+                    I first include css normalize the default styles for consistent styling baseline across browsers. Then I added an invisible border and set border box to everything.
+                </p>
+<div class="pre-container"><pre><code>* {
+    /* outline: 1px solid red; */
+    border: 1px solid transparent;
+    box-sizing: border-box;
+}</code></pre></div>
+                <p>
+                    Adding border to everything makes sure that all children margin do not collapse to parent's.
+                    Border box makes sure that the width and height that I set will not change when I add borders or padding.
+                </p>
+                <hr>
+<div class="pre-container"><pre><code>.content-anchor {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #ddd;
+    color: #000;
+    text-decoration: none;
+    transition: ease-in-out, background-color .15s;
+}</code></pre></div>
+                <p>
+                    I always use padding top and bottom for things that will be in a flex column.
+                </p>
+                <hr>
+<div class="pre-container"><pre><code>.paper > * {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}</code></pre></div>
+                <p>
+                    I add padding to the children and not the paper parent, this is so that the children are able to take full width and push its content with padding instead.
+                    This way I can have colored row in a paper. If paper had padding, then the elements are all pushed inside, it will not be able to have full width in the paper to be colored.
+                </p>
+            </section>
+        </article>
+        <article>
+            <section id="production-solutions" class="paper">
+                <div class="header-title">
+                    <h3>Production Solutions</h3>
+                </div>
+
+                <h4>Introduction</h4>
+                <p>
+                    SEA supplier, they supply equipment, services, support, knowledge, for clients to implement live. They have in house engineering, design team and operational support. Supply to major oil companies and service providers.
+                    Their personnel provides site consulting, for safety, problem solving and effectiveness. Their facilities are placed strategically for quick responses.
+                    All equipments standards are high levels. Uses QHSE systems to make sure that safety and quality standards are maintained.
+                </p>
+                <p>
+                    QHSE stands for Quality, Health, Safety, and Environment. A management system. To comply with quality standards, workplace health and safety, and minimize environment impact.
+                    So that risks are lowered, better operational performance, workers wellbeing, protect environment. Generally protect company reputation and meets legal requirements.
+                </p>
+
+                <hr>
+
+                <h4>Production Testing & Well Clean Up</h4>
+                <div>
+                    <figure>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Mallik_5L-38_Well_Site_2.jpg/640px-Mallik_5L-38_Well_Site_2.jpg" alt="well site">
+                        <figcaption>Photo by Tim Collett, Mallik 5L-38 Well Site 2.jpg</figcaption>
+                    </figure>
+                </div>
+                <p>
+                    Test wells are drilled to check the potential of a reservoir. Flow capacity, this measures fluids (oil, gas, and water) flow rate from the reservoir under specific conditions.
+                    Reservoir and Flowing Pressures, reservoir pressure is underground, flowing is the pressure of fluid flowing from well.
+                    Flow potential, the max rate fluids can flow from well at specific conditions.
+                </p>
+                <p>
+                    Overall, the purpose is to collect data about the reservoir's flow characteristics, productivity, and fluid composition. 
+                    This data is needed for making decisions about production strategies, reservoir management, and optimizing the extraction of oil and gas resources.
+                </p>
+
+                <hr>
+
+                <h4>Well Unloading & Blow Down</h4>
+                <p>
+                    Process used to increase production for wells that are not optimal. This is because some wells may become idle wells / low pressure wells. These are not producing optimally.
+                    This is done by flowing multiple low pressure wells to the surface, boosting the flow rates. Or by the use of pumps to re-inject oil and gas into the pipeline, this improves the flow.
+                </p>
+
+                <hr>
+
+                <h4>Gas Compression</h4>
+                <p>
+                    Production Solutions specializes in providing innovative compression and gas process systems that can enhance production in various applications, both offshore and onshore.
+                    The company offers flexible and customizable solutions, along with technical expertise and support to meet the specific needs of its clients.
+                </p>
+
+                <hr>
+
+                <h4>About Us</h4>
+                <p>
+                    Production Solutions was registered in Hong Kong, and later expanded to Thailand. Specialized in providing Well Unloading and Well Enhancement services to the oil and gas industry.
+                    Activities began in 2012 and established a local entity in Thailand for the local market.
+                </p>
+                <p>
+                    One of the key principles, organization that forms Production Solutions, is Addenmay Limited. A company registered in British Virgin Islands. 
+                    Production Solution aims to use services and materials from the local Thai industry. If this is not possible, at times they work with local partners, enabling them to offer support for quicker delivery times.
+                    They also collaborate with Prompt Solutions, a registered company in Thailand.
+                </p>
+                <p>Production Solutions is focused on becoming the lead provider of oil and gas well services. Well testing and production. Using Thailand based services and labour in oil and gas sector.</p>
+
+                <hr>
+
+                <h4>Facility Locations</h4>
+                <p>
+                    Based out of Bangkok with main service centres in Songklha and Sattahip, Thailand. Corporate office located in Singapore. Other regional operations locations:
+                </p>
+                <ul>
+                    <li>Jakarta</li>
+                    <li>Perth, Adelaide Australia</li>
+                    <li>Canada</li>
+                    <li>Labuan, Malaysia</li>
+                </ul>
+            </section>
+        </article>
+        <article>
+            <section id="tricky-html" class="paper">
+                <div class="header-title">
+                    <h3>Tricky HTML</h3>
+                </div>
+
+                <h4>Margin Collapse</h4>
+                <p>
+                    By default, children margin does not respect parent's. The best way to fix this issue is to add 1px padding to everything. However, siblings also do not respect each other's margin. 
+                    The best way to fix this issue is to set the parent display to flex.
+                </p>
+                <p>
+                    But I have come up with a strategy. Remember that padding respect each other. Margin doesn't. Use padding whenever it is okay to have the item take more space. Margin to push things away.
+                    There is no need for margin to be pushing each other, so always try to use one margin to push something away.
+                </p>
+
+                <hr>
+
+                <h4>Border box</h4>
+                <p>
+                    Default width and height do not include padding and border. 
+                    When you set specific width and height, any padding or border added to it will make it fatter.
+                    If you set it to border box, the height and width you set will be respected always.
+                </p>
+            </section>
+        </article>
+        <article>
+            <section id="the-unix-shell" class="paper">
+                <div class="header-title">
+                    <h3>The Unix Shell</h3>
+                </div>
+
+                <h4>Introduction</h4>
+                <p>
+                    Most people interact with computers using GUI, unix shell is a better way to interact. Unix shell refers to the software and language, the software is the command-line interface CLI.
+                </p>
+            </section>
+        </article>
+    </main>
 </body>
 </html>
